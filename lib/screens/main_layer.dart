@@ -13,10 +13,20 @@ class MainLayer extends StatefulWidget {
 class _MainLayerState extends State<MainLayer> {
   int currentTab = 0;
 
+  List<Widget> tabs = [
+    Container(color: Colors.red,),
+    Container(color: Colors.amber,),
+    Container(color: Colors.grey,),
+    Container(color: Colors.blueAccent,),
+    Container(color: Colors.green,),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Islamy application')),
+
+      body: tabs[currentTab],
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentTab,
