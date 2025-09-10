@@ -16,7 +16,7 @@ class OnboardingTabWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         spacing: 30,
         children: [
