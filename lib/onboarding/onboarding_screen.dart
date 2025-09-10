@@ -39,15 +39,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: [
                 currentPage != 0
                     ? TextButton(
-                      onPressed:
-                          currentPage == 0
-                              ? null
-                              : () {
-                                _controller.previousPage(
-                                  duration: Duration(milliseconds: 300),
-                                  curve: Curves.ease,
-                                );
-                              },
+                      onPressed: () {
+                        _controller.previousPage(
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.ease,
+                        );
+                      },
                       child: Text(
                         "Back",
                         style: TextStyle(
