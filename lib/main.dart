@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islami_application/screens/main_layer.dart';
 import 'package:islami_application/theme/app_theme.dart';
 
+import 'onboarding/onboarding_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,9 +18,10 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.appTheme,
       title: 'Islamy application',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'mainLayer',
+      initialRoute: 'onboarding',
       routes: {
-        'mainLayer' : (context) => MainLayer()
+        'mainLayer' : (context) => MainLayer(),
+        'onboarding' : (context) => OnboardingScreen()
       },
     );
   }
