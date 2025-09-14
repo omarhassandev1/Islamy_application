@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_application/theme/app_colors.dart';
 
@@ -24,33 +25,49 @@ class OnboardingTabWidget extends StatelessWidget {
             'assets/images/onboarding/islami_application.png',
             height: MediaQuery.of(context).size.height * 0.18,
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.5,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(imagePath)),
+          Expanded(
+            flex: 5,
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.5,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(imagePath)),
+              ),
             ),
           ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              color: AppColors.goldColor,
-              fontFamily: 'poppins',
-            ),
-          ),
-          brief != null
-              ? Text(
-                textAlign: TextAlign.center,
-                brief!,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.goldColor,
-                  fontFamily: 'poppins',
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                FittedBox(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.goldColor,
+                      fontFamily: 'poppins',
+                    ),
+                  ),
                 ),
-              )
-              : SizedBox.shrink(),
+                brief != null
+                    ? Expanded(
+                      child: AutoSizeText(
+                        textAlign: TextAlign.center,
+                        minFontSize: 16,
+                        maxLines: 3,
+                        brief!,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.goldColor,
+                          fontFamily: 'poppins',
+                        ),
+                      ),
+                    )
+                    : SizedBox.shrink(),
+              ],
+            ),
+          ),
         ],
       ),
     );
