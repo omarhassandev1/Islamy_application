@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.2.1
   auto_size_text: ^3.0.0
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,11 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/images/
     - assets/images/onboarding/
+    - assets/files/
+    - assets/files/Hadeeth/
+    - assets/files/Suras/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

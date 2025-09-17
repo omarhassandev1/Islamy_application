@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami_application/common/app_consts.dart';
 import 'package:islami_application/common/common_designs.dart';
+import 'package:islami_application/tabs/hadith/hadith_tab.dart';
 import 'package:islami_application/tabs/quran/quran_tab.dart';
 
 class MainLayer extends StatefulWidget {
   const MainLayer({super.key});
+  static const String routName = 'mainLayer';
+
 
   @override
   State<MainLayer> createState() => _MainLayerState();
@@ -16,7 +19,7 @@ class _MainLayerState extends State<MainLayer> {
 
   List<Widget> tabs = [
     QuranTab(),
-    Container(color: Colors.red,),
+    HadithTab(),
     Container(color: Colors.amber,),
     Container(color: Colors.grey,),
     Container(color: Colors.blueAccent,),
@@ -26,9 +29,11 @@ class _MainLayerState extends State<MainLayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Islamy application')),
+      // appBar: AppBar(title: Text('Islamy application')),
 
-      body: tabs[0],
+      resizeToAvoidBottomInset: false,
+
+      body: tabs[currentTab],
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentTab,

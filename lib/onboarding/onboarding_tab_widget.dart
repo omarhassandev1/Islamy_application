@@ -22,7 +22,7 @@ class OnboardingTabWidget extends StatelessWidget {
         spacing: 30,
         children: [
           Image.asset(
-            'assets/images/onboarding/islami_application.png',
+            'assets/images/onboarding/islami_header.png',
             height: MediaQuery.of(context).size.height * 0.18,
           ),
           Expanded(
@@ -37,6 +37,7 @@ class OnboardingTabWidget extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Column(
+              spacing: 10,
               children: [
                 FittedBox(
                   child: Text(

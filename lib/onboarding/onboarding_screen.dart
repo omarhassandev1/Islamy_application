@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:islami_application/onboarding/onbording_data.dart';
 import 'package:islami_application/theme/app_colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../screens/main_layer.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
+
+  static const String routName = 'onboarding';
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -12,6 +17,15 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _controller = PageController();
   int currentPage = 0;
+
+  Future<void> completeOnboarding() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('seenOnboarding', true);
+
+    Navigator.of(context).pushReplacementNamed(MainLayer.routName);
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +80,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 TextButton(
                   onPressed: () {
                     if (currentPage == OnboardingData.tabs.length - 1) {
-                      Navigator.of(context).pushNamed('mainLayer');
+                      completeOnboarding();
                       return;
                     }
 
