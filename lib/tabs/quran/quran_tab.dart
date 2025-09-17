@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islami_application/tabs/quran/views/most_recent_view.dart';
+import 'package:islami_application/tabs/quran/views/suras_list_view.dart';
+import 'package:islami_application/tabs/quran/widgets/custom_textfield.dart';
+import 'package:islami_application/widgets/main_bg_widget.dart';
 
 import '../../theme/app_colors.dart';
+import '../../widgets/main_header.dart';
 
 class QuranTab extends StatelessWidget {
   const QuranTab({super.key});
@@ -9,30 +14,29 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController controller = TextEditingController();
 
-    return Container(
-      height: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/Background.png'),
-          fit: BoxFit.fill,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [AppColors.blackColor]),
-            image: DecorationImage(
-              image: AssetImage(
-                'assets/images/onboarding/islami_application.png',
-              ),
-            ),
-          ),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: MainBgWidget(
+        bgImage: 'assets/quran_background.png',
+        child: Expanded(
           child: Column(
+            spacing: 20,
             children: [
-              Image.asset(
-                'assets/images/onboarding/islami_application.png',
-                height: MediaQuery.of(context).size.height * 0.18,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: CustomTextField(),
+              ),
+              Expanded(
+                child: CustomScrollView(
+                  slivers: [
+                    SliverList(
+                      delegate: SliverChildListDelegate([
+                        MostRecentView(),
+                        SurasListView(),
+                      ]),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
