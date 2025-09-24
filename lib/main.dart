@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_application/screens/main_layer.dart';
+import 'package:islami_application/tabs/hadith/hadith_details.dart';
 import 'package:islami_application/tabs/quran/sura_details.dart';
 import 'package:islami_application/theme/app_theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MainLayer.routName: (context) => MainLayer(),
         SuraDetails.routName: (context) => SuraDetails(),
+        HadeethDetails.routName: (context) => HadeethDetails(),
         OnboardingScreen.routName: (context) => OnboardingScreen(),
       },
     );

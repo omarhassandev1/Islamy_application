@@ -5,12 +5,14 @@ import 'package:islami_application/common/app_consts.dart';
 import '../../../theme/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
+  const CustomTextField({super.key, required this.onChanged});
+
+  final void Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: TextEditingController(),
+      onChanged: onChanged,
       cursorColor: AppColors.goldColor,
       style: TextStyle(
         fontSize: 14,

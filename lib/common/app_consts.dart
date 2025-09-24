@@ -8,5 +8,8 @@ class AppConsts{
   static const String timeIcon = 'assets/icons/time.svg';
 
 
+}
 
+class ImagePath{
+  static const String image = '';
 }

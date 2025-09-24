@@ -4,16 +4,18 @@ import 'package:islami_application/tabs/quran/views/suras_list_view.dart';
 import 'package:islami_application/tabs/quran/widgets/custom_textfield.dart';
 import 'package:islami_application/widgets/main_bg_widget.dart';
 
-import '../../theme/app_colors.dart';
-import '../../widgets/main_header.dart';
-
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final TextEditingController controller = TextEditingController();
+  State<QuranTab> createState() => _QuranTabState();
+}
 
+class _QuranTabState extends State<QuranTab> {
+  String searchText = '';
+
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: MainBgWidget(
@@ -24,7 +26,13 @@ class QuranTab extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: CustomTextField(),
+                child: CustomTextField(
+                  onChanged: (text) {
+                    setState(() {
+                      searchText = text;
+                    });
+                  },
+                ),
               ),
               Expanded(
                 child: CustomScrollView(
@@ -32,7 +40,12 @@ class QuranTab extends StatelessWidget {
                     SliverList(
                       delegate: SliverChildListDelegate([
                         MostRecentView(),
-                        SurasListView(),
+                        SurasListView(
+                          searchText: searchText,
+                          onNavigation: () {
+                            setState(() {});
+                          },
+                        ),
                       ]),
                     ),
                   ],

@@ -15,6 +15,7 @@ class AppTheme {
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
+      scrolledUnderElevation: 0,
     ),
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.blackColor,

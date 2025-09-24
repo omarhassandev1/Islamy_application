@@ -2,14 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami_application/models/sura_model.dart';
 import 'package:islami_application/tabs/quran/sura_details.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../theme/app_colors.dart';
 
 class SurasListView extends StatelessWidget {
-  const SurasListView({super.key});
+  const SurasListView({
+    super.key,
+    required this.searchText,
+    required this.onNavigation,
+  });
+
+  final String searchText;
+
+  final void Function() onNavigation;
 
   @override
   Widget build(BuildContext context) {
+    print('------->$searchText');
+
+    List<SuraModel> suras =
+        SuraModel.getSurasList
+            .where(
+              (element) =>
+                  element.arName.contains(searchText) ||
+                  element.enName.toLowerCase().contains(
+                    searchText.toLowerCase(),
+                  ),
+            )
+            .toList();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
@@ -26,12 +47,14 @@ class SurasListView extends StatelessWidget {
           ListView.separated(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: SuraModel.getSurasList.length,
+            itemCount: suras.length,
             itemBuilder: (context, index) {
-              List<SuraModel> suras = SuraModel.getSurasList;
               SuraModel currentSura = suras[index];
               return ListTile(
                 onTap: () {
+                  cashSuraToList(currentSura.index).then((_) {
+                    onNavigation();
+                  });
                   Navigator.of(
                     context,
                   ).pushNamed(SuraDetails.routName, arguments: currentSura);
@@ -92,5 +115,13 @@ class SurasListView extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  cashSuraToList(int index) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> data = prefs.getStringList('mostRecent') ?? [];
+    data.remove(index.toString());
+    data.add(index.toString());
+    prefs.setStringList('mostRecent', data);
   }
 }
