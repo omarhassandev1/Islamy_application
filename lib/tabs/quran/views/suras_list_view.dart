@@ -62,7 +62,7 @@ class SurasListView extends StatelessWidget {
                 leading: Stack(
                   alignment: Alignment.center,
                   children: [
-                    SvgPicture.asset('assets/icons/suraList.svg'),
+                    SvgPicture.asset('assets/svg/suraList.svg'),
                     Text(
                       currentSura.index.toString(),
                       style: TextStyle(

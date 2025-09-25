@@ -63,7 +63,7 @@ class _MostRecentViewState extends State<MostRecentView> {
                     children: [
                       Expanded(
                         child: SvgPicture.asset(
-                          'assets/icons/empty.svg',
+                          'assets/svg/empty.svg',
                           colorFilter: ColorFilter.mode(
                             AppColors.goldColor,
                             BlendMode.srcIn,

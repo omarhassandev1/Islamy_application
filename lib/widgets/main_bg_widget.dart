@@ -28,7 +28,9 @@ class MainBgWidget extends StatelessWidget {
             ],
           ),
         ),
-        child: SafeArea(child: Column(children: [MainHeader(), child])),
+        child: SafeArea(child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [MainHeader(), child])),
       ),
     );
   }

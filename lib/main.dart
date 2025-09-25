@@ -10,7 +10,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool seenOnboarding = prefs.getBool('seenOnboarding') ?? false;
+  bool seenOnboarding = prefs.getBool('seenOnboarding') ?? false; // to skip onboarding if NOT the 1st time
+
+  // to reset the sebha counters each time the application runs
+  await prefs.setInt('counter', 0);
+  await prefs.setInt('current', 0);
 
   runApp(MyApp(seenOnboarding: seenOnboarding));
 }
