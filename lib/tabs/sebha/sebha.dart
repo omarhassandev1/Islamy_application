@@ -5,6 +5,7 @@ import 'package:islami_application/tabs/sebha/widgets/reset_sebha_button.dart';
 import 'package:islami_application/theme/app_colors.dart';
 import 'package:islami_application/widgets/main_bg_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:math' as math;
 
 class SebhaScreen extends StatefulWidget {
   const SebhaScreen({super.key});
@@ -18,9 +19,10 @@ class _SebhaScreenState extends State<SebhaScreen> {
   int current = 0;
   int counter = 0;
 
+  double _rotationAngle = 0;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _loadValues();
   }
@@ -50,7 +52,10 @@ class _SebhaScreenState extends State<SebhaScreen> {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        Image.asset('assets/Group 39.png'),
+                        Transform.rotate(
+                          angle: _rotationAngle,
+                          child: Image.asset('assets/Group 39.png'),
+                        ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           spacing: 8,
@@ -102,13 +107,15 @@ class _SebhaScreenState extends State<SebhaScreen> {
   }
 
   void increment() {
-    if (counter < 5) {
+    _rotateSebha();
+    if (counter < 33) {
       setState(() {
         counter++;
       });
-    } else if (counter == 5) {
+    } else if (counter == 33) {
       setState(() {
         counter = 0;
+        _rotationAngle=0;
         if (current < azkar.length - 1) {
           current++;
         } else if (current == azkar.length - 1) {
@@ -189,9 +196,6 @@ class _SebhaScreenState extends State<SebhaScreen> {
                     ],
                   ),
                 ),
-                // const SizedBox(
-                //   height: 40,
-                // ),
               ],
             ),
           ),
@@ -205,9 +209,19 @@ class _SebhaScreenState extends State<SebhaScreen> {
     setState(() {
       current = 0;
       counter = 0;
+      _rotationAngle = 0;
     });
     await prefs.setInt('current', 0);
     await prefs.setInt('counter', 0);
+  }
+
+  void _rotateSebha() {
+    setState(() {
+      _rotationAngle += (360 / 33) * (math.pi / 180);
+      if (_rotationAngle >= 360) {
+        _rotationAngle = 0;
+      }
+    });
   }
 
   TextStyle get _sebhaTextStyle => const TextStyle(
