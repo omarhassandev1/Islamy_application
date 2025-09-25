@@ -117,10 +117,6 @@ class _SebhaScreenState extends State<SebhaScreen> {
       });
     }
     _saveValues();
-    print('-------------------------');
-    print('------> counter: $counter');
-    print('------> current: $current');
-    print('-------------------------');
   }
 
   Future<void> _loadValues() async {
@@ -151,9 +147,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
                 const SizedBox(height: 20),
                 Text(
                   "هل أنت متأكد أنك تريد تصفير للسبحة؟",
-                  style: _sebhaTextStyle.copyWith(
-                    fontSize: 32
-                  ),
+                  style: _sebhaTextStyle.copyWith(fontSize: 32),
                   textAlign: TextAlign.center,
                 ),
                 Padding(
@@ -218,9 +212,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
 
   TextStyle get _sebhaTextStyle => const TextStyle(
     fontWeight: FontWeight.bold,
-    color:
-        Colors
-            .white, // Using Colors.white as fallback for AppColors.offWhiteColor
+    color: Colors.white,
     fontSize: 38,
   );
 }
