@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_application/tabs/radio/views/radio_listview.dart';
 import 'package:islami_application/tabs/radio/views/reciters_listview.dart';
-import 'package:islami_application/tabs/radio/widgets/radioHeader.dart';
-import 'package:islami_application/tabs/radio/widgets/radioHeaderElement.dart';
+import 'package:islami_application/tabs/radio/widgets/radio_header.dart';
+import 'package:islami_application/tabs/radio/widgets/radio_header_element.dart';
 import 'package:islami_application/widgets/main_bg_widget.dart';
 
 class RadioTab extends StatefulWidget {

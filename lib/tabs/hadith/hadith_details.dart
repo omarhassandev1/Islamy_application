@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:islami_application/models/hadeeth_model.dart';
-import 'package:islami_application/models/sura_model.dart';
 
 import '../../theme/app_colors.dart';
 
@@ -28,8 +26,8 @@ class _HadeethDetailsState extends State<HadeethDetails> {
           Image.asset('assets/sura_details_bg.png', fit: BoxFit.fill),
           Column(
             children: [
-              SizedBox(height: 16),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 hadeeth.title,
                 style: TextStyle(
@@ -38,10 +36,10 @@ class _HadeethDetailsState extends State<HadeethDetails> {
                   color: AppColors.goldColor,
                 ),
               ),
-              SizedBox(height: 42),
+              const SizedBox(height: 42),
               Expanded(
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     hadeeth.content,
                     style: TextStyle(
@@ -53,7 +51,7 @@ class _HadeethDetailsState extends State<HadeethDetails> {
                   ),
                 ),
               ),
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
             ],
           ),
         ],

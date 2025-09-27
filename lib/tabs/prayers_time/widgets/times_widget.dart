@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:islami_application/tabs/prayers_time/classes/prayerClass.dart';
+import 'package:islami_application/tabs/prayers_time/classes/prayer_class.dart';
 import 'package:islami_application/theme/app_colors.dart';
 
 class TimesWidget extends StatefulWidget {
-  TimesWidget({super.key});
+  const TimesWidget({super.key});
 
   @override
   State<TimesWidget> createState() => _TimesWidgetState();
@@ -74,17 +74,17 @@ class _TimesWidgetState extends State<TimesWidget> {
                       ),
                       child: Container(
                         width: 30,
-                        margin: EdgeInsets.symmetric(
+                        margin: const EdgeInsets.symmetric(
                           vertical: 16,
                           horizontal: 4,
                         ),
-                        padding: EdgeInsets.only(top: 12),
+                        padding: const EdgeInsets.only(top: 12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
-                            stops: [0.1, 0.7],
+                            stops: const [0.1, 0.7],
                             colors: [
                               AppColors.blackColor,
                               AppColors.gradientBrown,
@@ -118,8 +118,8 @@ class _TimesWidgetState extends State<TimesWidget> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(),
-                    Row(
+                    const Spacer(),
+                    const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Opacity(
@@ -141,7 +141,7 @@ class _TimesWidgetState extends State<TimesWidget> {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     SvgPicture.asset('assets/svg/mute2.svg'),
                   ],
                 ),
@@ -154,5 +154,5 @@ class _TimesWidgetState extends State<TimesWidget> {
   }
 
   TextStyle get styles =>
-      TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
+      const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
 }

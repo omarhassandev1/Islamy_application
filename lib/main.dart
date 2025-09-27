@@ -31,10 +31,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: seenOnboarding ? MainLayer.routName : OnboardingScreen.routName,
       routes: {
-        MainLayer.routName: (context) => MainLayer(),
-        SuraDetails.routName: (context) => SuraDetails(),
-        HadeethDetails.routName: (context) => HadeethDetails(),
-        OnboardingScreen.routName: (context) => OnboardingScreen(),
+        MainLayer.routName: (context) => const MainLayer(),
+        SuraDetails.routName: (context) => const SuraDetails(),
+        HadeethDetails.routName: (context) => const HadeethDetails(),
+        OnboardingScreen.routName: (context) => const OnboardingScreen(),
       },
     );
   }

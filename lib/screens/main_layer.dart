@@ -21,11 +21,11 @@ class _MainLayerState extends State<MainLayer> {
   int currentTab = 0;
 
   List<Widget> tabs = [
-    QuranTab(),
-    HadithTab(),
-    SebhaScreen(),
-    RadioTab(),
-    PrayersTimeScreen(),
+    const QuranTab(),
+    const HadithTab(),
+    const SebhaScreen(),
+    const RadioTab(),
+    const PrayersTimeScreen(),
   ];
 
   @override
@@ -46,7 +46,7 @@ class _MainLayerState extends State<MainLayer> {
         items: [
           BottomNavigationBarItem(
             icon: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
                   currentTab == 0 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
@@ -59,7 +59,7 @@ class _MainLayerState extends State<MainLayer> {
           ),
           BottomNavigationBarItem(
             icon: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
                   currentTab == 1 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
@@ -72,7 +72,7 @@ class _MainLayerState extends State<MainLayer> {
           ),
           BottomNavigationBarItem(
             icon: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
                   currentTab == 2 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
@@ -85,7 +85,7 @@ class _MainLayerState extends State<MainLayer> {
           ),
           BottomNavigationBarItem(
             icon: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
                   currentTab == 3 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
@@ -98,7 +98,7 @@ class _MainLayerState extends State<MainLayer> {
           ),
           BottomNavigationBarItem(
             icon: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
                   currentTab == 4 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(

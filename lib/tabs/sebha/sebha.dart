@@ -99,7 +99,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
           FloatingActionButton(
             onPressed: increment,
             backgroundColor: AppColors.goldColor,
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ],
       ),
@@ -169,7 +169,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.greyColor,
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                           ),
                           child: Text(
                             'cancel',
@@ -185,7 +185,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.goldColor,
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                           ),
                           child: Text(
                             'reset',

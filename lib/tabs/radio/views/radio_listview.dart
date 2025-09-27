@@ -13,7 +13,7 @@ class RadioListview extends StatelessWidget {
         itemBuilder: (context, index) {
           return RadioCard(title: radioNames[index],);
         },
-        separatorBuilder: (context, index) => SizedBox(height: 16),
+        separatorBuilder: (context, index) => const SizedBox(height: 16),
       ),
     );
   }

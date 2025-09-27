@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_application/tabs/prayers_time/classes/zekrClass.dart';
+import 'package:islami_application/tabs/prayers_time/classes/zekr_class.dart';
 
 class AzkarWidget extends StatelessWidget {
   const AzkarWidget({super.key, required this.zekr});

@@ -65,7 +65,7 @@ class OnboardingTabWidget extends StatelessWidget {
                         ),
                       ),
                     )
-                    : SizedBox.shrink(),
+                    : const SizedBox.shrink(),
               ],
             ),
           ),

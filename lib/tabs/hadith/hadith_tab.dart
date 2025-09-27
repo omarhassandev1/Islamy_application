@@ -5,7 +5,6 @@ import 'package:islami_application/tabs/hadith/hadith_details.dart';
 import 'package:islami_application/theme/app_colors.dart';
 import 'package:islami_application/widgets/main_bg_widget.dart';
 
-import '../../widgets/main_header.dart';
 
 class HadithTab extends StatefulWidget {
   const HadithTab({super.key});
@@ -64,8 +63,8 @@ class _HadithTabState extends State<HadithTab> {
                   vertical: index != currentPage ? 20 : 0,
                 ),
                 child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
-                  padding: EdgeInsets.only(top: 12),
+                  margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+                  padding: const EdgeInsets.only(top: 12),
                   decoration: BoxDecoration(
                     color: AppColors.goldColor,
                     borderRadius: BorderRadius.circular(24),
@@ -76,12 +75,12 @@ class _HadithTabState extends State<HadithTab> {
                       Image.asset(
                         'assets/images/hadith_card_image.png',
                         fit: BoxFit.fill,
-                        opacity: AlwaysStoppedAnimation(.5),
+                        opacity: const AlwaysStoppedAnimation(.5),
                       ),
                       Column(
                         spacing: 10,
                         children: [
-                          SizedBox(height: 42),
+                          const SizedBox(height: 42),
                           Text(
                             hadeeth.title,
                             style: TextStyle(

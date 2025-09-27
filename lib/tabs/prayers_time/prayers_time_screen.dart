@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami_application/tabs/prayers_time/widgets/azkar_widget.dart';
 import 'package:islami_application/tabs/prayers_time/widgets/times_widget.dart';
-import 'package:islami_application/tabs/prayers_time/classes/zekrClass.dart';
+import 'package:islami_application/tabs/prayers_time/classes/zekr_class.dart';
 import 'package:islami_application/widgets/main_bg_widget.dart';
 
 class PrayersTimeScreen extends StatelessWidget {
@@ -11,7 +10,6 @@ class PrayersTimeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    List<ZekrCategory> azkarCategories = ZekrCategory.azkarCategories;
     return MainBgWidget(
       bgImage: 'assets/images/prayers_time/prayers_background.png',
       child: Expanded(
@@ -21,7 +19,7 @@ class PrayersTimeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TimesWidget(),
+                const TimesWidget(),
 
                 const SizedBox(height: 24),
 

@@ -31,7 +31,7 @@ class AppTheme {
       showSelectedLabels: true,
       showUnselectedLabels: false,
       type: BottomNavigationBarType.fixed,
-      selectedLabelStyle: TextStyle(
+      selectedLabelStyle: const TextStyle(
         fontFamily: AppConsts.fontFamily,
         fontSize: 14,
         fontWeight: FontWeight.bold,

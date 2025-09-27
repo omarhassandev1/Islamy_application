@@ -55,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ? TextButton(
                       onPressed: () {
                         _controller.previousPage(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.ease,
                         );
                       },
@@ -67,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     )
-                    : SizedBox(width: 70),
+                    : const SizedBox(width: 70),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     }
 
                     _controller.nextPage(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       curve: Curves.ease,
                     );
                   },
@@ -106,8 +106,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   Widget buildDot({required int index}) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      duration: const Duration(milliseconds: 200),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       height: 10,
       width: currentPage == index ? 25 : 10,
       decoration: BoxDecoration(
