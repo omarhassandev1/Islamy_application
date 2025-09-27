@@ -196,6 +196,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
                     ],
                   ),
                 ),
+                const SizedBox(height: 20),
               ],
             ),
           ),

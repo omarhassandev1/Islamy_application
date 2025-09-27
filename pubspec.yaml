@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^2.2.1
   auto_size_text: ^3.0.0
   shared_preferences: ^2.5.3
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +67,11 @@ flutter:
     - assets/svg/
     - assets/images/
     - assets/images/sebha/
+    - assets/images/splash_screen/
     - assets/images/onboarding/
+    - assets/images/radio/
+    - assets/images/prayers_time/
+    - assets/images/prayers_time/azkar/
     - assets/files/
     - assets/files/Hadeeth/
     - assets/files/Suras/

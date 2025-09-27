@@ -6,4 +6,5 @@ class AppColors{
     static Color greyColor = Color(0xff707070);
     static Color offWhiteColor = Color(0xffFFF5E3);
     static Color brownColor = Color(0xff946107);
+    static Color gradientBrown = Color(0xffB19768);
 }

@@ -89,6 +89,8 @@ class _HadithTabState extends State<HadithTab> {
                               fontWeight: FontWeight.bold,
                               color: AppColors.blackColor,
                             ),
+                            textAlign: TextAlign.center,
+                            textDirection: TextDirection.rtl,
                           ),
                           Expanded(
                             child: Padding(

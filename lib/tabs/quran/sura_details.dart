@@ -19,7 +19,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   @override
   Widget build(BuildContext context) {
     final SuraModel suraModel =
-        ModalRoute.of(context)!.settings.arguments as SuraModel;
+    ModalRoute.of(context)!.settings.arguments as SuraModel;
 
     loadSura(suraModel.index);
 

@@ -4,6 +4,7 @@ import 'package:islami_application/theme/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../models/sura_model.dart';
+import '../sura_details.dart';
 
 class MostRecentView extends StatefulWidget {
   const MostRecentView({super.key});
@@ -92,65 +93,75 @@ class _MostRecentViewState extends State<MostRecentView> {
                   itemCount: mostRecent.length,
                   itemBuilder: (context, index) {
                     SuraModel sura = mostRecent[index];
-                    return SizedBox(
-                      width: 280,
-                      child: Card(
-                        color: AppColors.goldColor,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            top: 7.0,
-                            right: 7,
-                            bottom: 7,
-                            left: 20,
-                          ),
-                          child: Stack(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 8.0,
-                                ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      sura.enName,
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        color: AppColors.blackColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
+                    return GestureDetector(
+                      onTap: (){
+                        Navigator.of(
+                          context,
+                        ).pushNamed(SuraDetails.routName, arguments: mostRecent[index]);
+                      },
+
+                      child: SizedBox(
+                        width: 280,
+                        child: Card(
+                          color: AppColors.goldColor,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              top: 7.0,
+                              right: 7,
+                              bottom: 7,
+                              left: 20,
+                            ),
+                            child: Stack(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 8.0,
+                                  ),
+                                  child: FittedBox(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          sura.enName,
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            color: AppColors.blackColor,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        Text(
+                                          sura.arName,
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            color: AppColors.blackColor,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Text(
+                                          '${sura.versesCount} verses',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            color: AppColors.blackColor,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    Text(
-                                      sura.arName,
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        color: AppColors.blackColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      '${sura.versesCount} verses',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: AppColors.blackColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                              Positioned(
-                                top: 0,
-                                bottom: 0,
-                                right: 0,
-                                child: Image.asset(
-                                  'assets/images/surahImage.png',
+                                Positioned(
+                                  top: 0,
+                                  bottom: 0,
+                                  right: 0,
+                                  child: Image.asset(
+                                    'assets/images/surahImage.png',
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

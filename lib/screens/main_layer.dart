@@ -6,10 +6,12 @@ import 'package:islami_application/tabs/hadith/hadith_tab.dart';
 import 'package:islami_application/tabs/quran/quran_tab.dart';
 import 'package:islami_application/tabs/sebha/sebha.dart';
 
+import '../tabs/prayers_time/prayers_time_screen.dart';
+import '../tabs/radio/radio.dart';
+
 class MainLayer extends StatefulWidget {
   const MainLayer({super.key});
   static const String routName = 'mainLayer';
-
 
   @override
   State<MainLayer> createState() => _MainLayerState();
@@ -22,16 +24,14 @@ class _MainLayerState extends State<MainLayer> {
     QuranTab(),
     HadithTab(),
     SebhaScreen(),
-    Container(color: Colors.grey,),
-    Container(color: Colors.blueAccent,),
-    Container(color: Colors.green,),
+    RadioTab(),
+    PrayersTimeScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(title: Text('Islamy application')),
-
       resizeToAvoidBottomInset: false,
 
       body: tabs[currentTab],
@@ -48,9 +48,7 @@ class _MainLayerState extends State<MainLayer> {
             icon: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
-                  currentTab == 0
-                      ? CommonDesigns.selectedTabDecoration
-                      : null,
+                  currentTab == 0 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
                 AppConsts.quranIcon,
                 width: currentTab == 0 ? 20 : 24,
@@ -63,9 +61,7 @@ class _MainLayerState extends State<MainLayer> {
             icon: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
-                  currentTab == 1
-                      ? CommonDesigns.selectedTabDecoration
-                      : null,
+                  currentTab == 1 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
                 AppConsts.hadithIcon,
                 width: currentTab == 1 ? 20 : 24,
@@ -78,9 +74,7 @@ class _MainLayerState extends State<MainLayer> {
             icon: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
-                  currentTab == 2
-                      ? CommonDesigns.selectedTabDecoration
-                      : null,
+                  currentTab == 2 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
                 AppConsts.sebhaIcon,
                 width: currentTab == 2 ? 20 : 24,
@@ -93,9 +87,7 @@ class _MainLayerState extends State<MainLayer> {
             icon: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
-                  currentTab == 3
-                      ? CommonDesigns.selectedTabDecoration
-                      : null,
+                  currentTab == 3 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
                 AppConsts.radioIcon,
                 width: currentTab == 3 ? 20 : 24,
@@ -108,9 +100,7 @@ class _MainLayerState extends State<MainLayer> {
             icon: Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
               decoration:
-                  currentTab == 4
-                      ? CommonDesigns.selectedTabDecoration
-                      : null,
+                  currentTab == 4 ? CommonDesigns.selectedTabDecoration : null,
               child: SvgPicture.asset(
                 AppConsts.timeIcon,
                 width: currentTab == 4 ? 20 : 24,
