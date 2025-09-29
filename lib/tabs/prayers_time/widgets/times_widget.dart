@@ -11,11 +11,14 @@ class TimesWidget extends StatefulWidget {
 }
 
 class _TimesWidgetState extends State<TimesWidget> {
-  int currentPage = 3;
+  int currentPage = 2;
 
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(viewportFraction: 0.4);
+    PageController controller = PageController(
+      viewportFraction: 0.4,
+      initialPage: currentPage,
+    );
     return SizedBox(
       width: double.infinity,
       child: Stack(
@@ -153,6 +156,9 @@ class _TimesWidgetState extends State<TimesWidget> {
     );
   }
 
-  TextStyle get styles =>
-      const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
+  TextStyle get styles => const TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
 }
