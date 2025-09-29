@@ -23,7 +23,7 @@ class _RadioTabState extends State<RadioTab> {
         bgImage: 'assets/images/radio/radio-background.png',
         child: Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10),
             child: Column(
               children: [
                 const SizedBox(height: 16),

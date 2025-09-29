@@ -14,7 +14,7 @@ class PrayersTimeScreen extends StatelessWidget {
       bgImage: 'assets/images/prayers_time/prayers_background.png',
       child: Expanded(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
