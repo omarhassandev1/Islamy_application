@@ -65,27 +65,5 @@ lib/
 ## 📸 Screen record
 
 [https://drive.google.com/file/d/1m1Z-4Q3P8f-7LQaprg1rv_SxPdSHM-aA/view?usp=sharing]
+
 ---
-
-## ⚙️ Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/omarhassandev1/Islamy_application.git
-   ```
-2. Navigate to the project folder:
-
-   ```bash
-   cd islami_app
-   ```
-3. Install dependencies:
-
-   ```bash
-   flutter pub get
-   ```
-4. Run the app:
-
-   ```bash
-   flutter run
-   ```
